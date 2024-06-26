@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="h-screen flex flex-col font-mont ">
+      <header class=" ">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold font-sans">MMS Solutions</h1>
+          <h2>Invoice App</h2>
+        </div>
+      </header>
+      <section class=" mt-[50px]">
+        <div class="container">
+
+          <!-- first body in bdy -->
+          <div class="   print:hidden">
+            <form id="productNameForm" class=" mx-auto grid grid-cols-4 gap-4"   >
+               <!-- select in first bd -->
+
+            <div class="col-span-2">
+             
+              <label for="underline_select" class="sr-only"
+                >Select fruits</label
+              >
+              <select
+              name="productName"
+                id="productSelect" required
+                class="block py-2.5 px-4 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+              >
+                <option value="" selected>Choose a product</option>
+                
+                
+              </select>
+           
+          </div>
+          <div class="col-span-1">
+             
+            <!-- <label
+              for="number-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Select a number:</label
+            > -->
+            <input
+            name="quantity"
+            
+              type="number"
+              id="number-input"
+              
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Quantity"
+
+              required
+            />
+          
+        </div>
+        <!-- btn in first bd -->
+        <div class="col-span-1">
+          <button  type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg w-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
+
+        </div>
+
+
+            </form>
+           
+            <!-- quantity in first bd  -->
+          
+          </div>
+
+          <!-- second div in bdy  -->
+          <div class="mt-6">
+            
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table  class="w-full text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                  Product name
+              </th>
+              <th scope="col" class="px-6 py-3 text-end">
+                  Price
+              </th>
+              <th scope="col" class="px-6 text-end py-3">
+                  Quantity
+              </th>
+              <th scope="col" class="px-6 text-end py-3">
+                  cost
+              </th>
+              <th scope="col" class="px-6 text-end py-3">
+               delet
+            </th>
+              
+          </tr>
+      </thead>
+      <tbody id="recordTable">
+        <tr class="bg-white border-b hidden last:table-row dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <th scope="row"  colspan="4" rowspan="3" class=" text-2xl font-semibold   text-center px-6 tab py-4  text-gray-900 whitespace-nowrap dark:text-white">
+             There is no list 
+          </th>
+          </tr>
+
+       
+          
+
+         
+
+        
+          </tr>
+
+         
+       
+
+        
+    </tr>
+      </tbody>
+      <tfoot>
+        <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 border-b  ">
+          <th  scope="row" colspan="3" class="  px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center dark:text-white ">
+              Total
+          </th>
+          <td id="recordTotal" class="  px-6 py-4 text-end">
+              0
+          </td>
+      </tr>
+      <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 border-b ">
+        <th scope="row" colspan="3" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center dark:text-white ">
+            TAx
+        </th>
+        <td id="recordTax" class="px-6 py-4 text-end ">
+          0
+        </td>
+       
+        
+    </tr>
+
+    <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 border-b">
+      <th scope="row" colspan="3" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center dark:text-white ">
+          Net Total
+      </th>
+      <td id="recordNetTotal" class="px-6 py-4 text-end ">
+          0
+
+      </td>
+
+      </tfoot>
+  </table>
+  
+</div>
+
+          </div>
+        </div>
+      </section>
+      <p class="text-center mt-9 font-semibold hidden print:block">၀ယ်ယူအားပေးမှုကို ကျေးဇူးတင်ပါသည် MMSIT </p>
+      <footer class=" mt-auto">
+        <div class="container">
+          <div class="flex flex-row gap-3 justify-end w-full">
+            <button id="ManageInventory" type="button" class="print:hidden  py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700  focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Manage Inventory</button>
+
+            <button type="button" id="printBtn" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Print</button>
+
+
+          </div>
+        </div>
+      </footer>
+
+      <!-- sidebar -section  -->
+       <section id="sideBar" class="fixed h-screen  right-0 w-1/3 bg-blue-200 container flex flex-col gap-4 translate-x-full  duration-200">
+        <div class="grid grid-flow-col justify-between">
+          <div class="flex flex-col gap-4">
+            <h1 class="text-3xl">Manage Inventory</h1>
+            <h4 class="text-xl">Available items</h4>
+          </div>
+          <button id="closeBtn">
+            <img src="./img/cross-svgrepo-com.svg" class=" h-24 pointer-events-none" alt="">
+
+          </button>
+          
+        </div>
+
+        <!-- items in side bar  -->
+        <div id="productGroup" class="flex flex-col gap-2">
+        
+          
+         
+        </div>
+        
+
+        <!-- footer in sidebar  -->
+         <div class="grid grid-cols-3 gap-4 container py-3 ">
+          <div class="col-span-3">
+
+            <input
+                  type="text"
+                  id="textInput"  
+                  
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
+                  placeholder="New item Name"
+                  required
+                />
+
+
+          </div>
+          <div class="col-span-2">
+            <input
+                  type="number"
+                  id="numberInput"  
+                  
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Price"
+                  required
+                />
+
+          </div>
+          <div class="col-span-1">
+            <button id="sidebarAddBtn" type="button" class="focus:outline-none w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Add</button>
+
+
+          </div>
+
+         </div>
+
+       </section>
+
+       
+       <!-- template   -->
+        <template  class="create-product">
+          <div class="productCard flex flex-row justify-between p-4 border border-solid border-stone-900"> 
+            <p class="product-name" >Apple </p>
+            <div class="flex flex-row justify-between"><p class="product-price"> 1200</p><p>mmk</p></div>
+
+          </div>
+        </template>
+
+        <template class="record-create-template">
+          <tr class="bg-white record-row border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <th  scope="row" class="px-6 template-product-name py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                Apple MacBook Pro 17"
+            </th>
+            <td class="px-6 template-product-price py-4 text-end">
+                Silver
+            </td>
+            <td class="px-6 py-4  text-end flex flex-row gap-2 justify-end">
+               <button class="minus-btn  print:hidden">
+                <svg class=" size-5 pointer-events-none" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+                  <title>minus_circle [#1429]</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs>
+              
+              </defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -600.000000)" fill="#000000">
+                          <g id="icons" transform="translate(56.000000, 160.000000)">
+                              <path d="M49.3,451 L57.7,451 L57.7,449 L49.3,449 L49.3,451 Z M53.5,458 C48.8674,458 45.1,454.411 45.1,450 C45.1,445.588 48.8674,442 53.5,442 C58.13155,442 61.9,445.588 61.9,450 C61.9,454.411 58.13155,458 53.5,458 L53.5,458 Z M53.5,440 C47.70085,440 43,444.477 43,450 C43,455.523 47.70085,460 53.5,460 C59.2981,460 64,455.523 64,450 C64,444.477 59.2981,440 53.5,440 L53.5,440 Z" id="minus_circle-[#1429]">
+              
+              </path>
+                          </g>
+                      </g>
+                  </g>
+              </svg>
+               </button>
+               <span  class="template-product-quantity font-semibold text-xl print:text-sm print:font-normal">0</span>
+               <button class="plus-btn  print:hidden"><svg class=" size-5 pointer-events-none" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    
+                <title>plus-circle</title>
+                <desc>Created with Sketch Beta.</desc>
+                <defs>
+            
+            </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -1089.000000)" fill="#000000">
+                        <path d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z" id="plus-circle" sketch:type="MSShapeGroup">
+            
+            </path>
+                    </g>
+                </g>
+            </svg></button>
+            </td>
+            <td class="px-6 py-4 text-end template-product-cost">
+                $2999
+            </td>
+            <td scope="col" class="px-6 text-end py-3 record-remove">
+             <button class="font-semibold record-remove text-xl  print:hidden">remove</button>
+           </td>
+            
+        </tr>
+        </template>
+    </main>
+   
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
